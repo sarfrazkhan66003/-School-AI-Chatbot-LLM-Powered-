@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        🏫 School Information Chatbot
+    </div>
+
+    <div id="chat-box"></div>
+
+    <div class="chat-input">
+        <input id="userInput" placeholder="Ask your school question..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="footer">
+        Developed by <b>Sarfraz Khan</b>
+    </div>
+</div>
+
+<script>
+function sendMessage() {
+    let input = document.getElementById("userInput");
+    let msg = input.value.trim();
+    if (!msg) return;
+
+    addMessage("You", msg);
+    input.value = "";
+
+    fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: msg})
+    })
+    .then(res => res.json())
+    .then(data => {
+        addMessage("Bot", data.reply);
+    });
+}
+
+function addMessage(sender, text) {
+    let box = document.getElementById("chat-box");
+    let div = document.createElement("div");
+    div.className = sender === "You" ? "user-msg" : "bot-msg";
+    div.innerHTML = `<b>${sender}:</b><br>${text}`;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+}
+</script>
+
+</body>
+</html>
