@@ -3,7 +3,8 @@ import re
 from config import FALLBACK_RESPONSE
 from llm_extractor import ask_llm
 
-DATA_FILE = r"C:\Users\DELL\Desktop\Sarfraz Khan(Code_File)\PW Data Science\PW Project DS\School LLM Chatbot\text_data\school_info.txt"
+DATA_FILE = r"C:\Users\DELL\Desktop\Sarfraz (Code_File)\PW Data Science\PW Project DS\School LLM Chatbot\text_data\school_info.txt"
+
 
 def load_data():
     if not os.path.exists(DATA_FILE):
