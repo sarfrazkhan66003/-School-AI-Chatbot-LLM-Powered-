@@ -49,3 +49,29 @@ for role, msg in st.session_state.chat:
         st.markdown(f"<div class='chat-box bot'>Bot: {msg}</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='footer'>Developed by Sarfraz Khan</div>", unsafe_allow_html=True)
+
+
+
+
+
+"""What are the school fees?
+Primary class fees
+Secondary fees
+School timing
+Where is the school located?
+Admission process
+Is transport facility available?
+What is the name of the school?
+Where is the school located?
+What is the school timing?
+What are the fees for primary classes?
+What curriculum does the school follow?
+You earlier asked about fees. 
+Do you want admission details?
+Can you provide the admission process?
+What is the name of the school?
+Where is the school located?
+What is the school timing?
+What are the fees for primary classes?
+What curriculum does the school follow?
+"""
